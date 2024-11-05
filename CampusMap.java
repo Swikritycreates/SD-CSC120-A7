@@ -42,14 +42,16 @@ public class CampusMap {
 
     public static void main(String[] args) {
         CampusMap myMap = new CampusMap();
+        //House H = new House("Washburn", "Drive Way");
+        myMap.addBuilding(new House("Washburn", "Drive Way"));
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Ainsworth", "Far end of the Campus", 3 ));
-        myMap.addBuilding(new Building("Neilson", "1 Chapin Way, Northampton, MA 01063", 4 ));
-        myMap.addBuilding(new Building("Compass Cafe", "Inside Neilson Library", 1 ));
-        myMap.addBuilding(new Building("Capen", "12 Prospect Street", 3 ));
+        myMap.addBuilding(new Library("Neilson", "1 Chapin Way, Northampton, MA 01063", 4 ));
+        myMap.addBuilding(new Cafe("Compass Cafe", "Inside Neilson Library", 1, true));
+        myMap.addBuilding(new House("Capen", "12 Prospect Street", 4, false, false));
         myMap.addBuilding(new Building("Ainsworth", "Far end of the Campus", 3 ));
-        myMap.addBuilding(new Building("Cutter", "Elm Street", 3 ));
+        myMap.addBuilding(new House("Cutter", "Elm Street"));
         myMap.addBuilding(new Building("Wright Hall", "1 Chapin Way, Northampton, MA 01063", 1 ));
         myMap.addBuilding(new Building("Hilliyer", "Green Street", 3 ));
         myMap.addBuilding(new Building("Clark Hall", "Elm Street", 2 ));

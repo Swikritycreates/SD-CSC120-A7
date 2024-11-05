@@ -20,25 +20,26 @@ public class Library extends Building {
   public Library(String name, String address, int nFloors) {
     super(name,address,nFloors);
     this.collection = new Hashtable<>();
+    System.out.println(this.name);
 
     System.out.println("You have built a library: 📖");
   }
+
+  /**
+   * Overloaded Constructor
+   * Gives default Neilson library location when no values called
+   */
+
+  public Library() {
+  this("Neilson", "Mid- Campus", 3);
+}
+
+
   /**
    * adds book to the library stock
    * @param title is the book's name
    */
   public void addTitle(String title){
-    collection.put(title, true);
-    System.out.println("Book Added");
-  }
-
-  /**
-   * Overloaded Method
-   * @param title
-   * @param isbn added parameter
-   * stores book with isbn numbers
-   */
-  public void addTitle(String title, int isbn){
     collection.put(title, true);
     System.out.println("Book Added");
   }
@@ -72,6 +73,17 @@ public class Library extends Building {
   public void returnBook(String title){
     collection.replace(title, false, true);
     System.out.println("Checked In");
+  }
+
+  /**
+   * Overloaded Constructor that takes in returning date as well
+   * @param title of the book
+   * @param dueDate the date it is returned
+   */
+
+  public void returnBook(String title, String dueDate) {
+    collection.replace(title, true, false); 
+    System.out.println("Checked Out: " + title + ", Returned Date: " + dueDate);
   }
 
   /**
@@ -121,8 +133,8 @@ public class Library extends Building {
    * @param args
    */
   public static void main(String[] args) {
-     Library l = new Library("Neilson", "Mid-campus", 3);
-     l.addTitle("Pretty Bae by Ms. Ayer", 9866345);
+     Library l = new Library();
+     l.addTitle("Pretty Bae by Ms. Ayer");
      l.checkOut("Shri's Princess");
      l.returnBook("Shri's Princess");
   }
